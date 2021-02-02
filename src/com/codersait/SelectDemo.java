@@ -16,6 +16,9 @@ public class SelectDemo {
 
         List<Person> persons = new ArrayList<>();
         try (Connection connection = DbHelper.getConnection()) {
+   // Statement interface cannot accept parameters and useful when you are using static SQL statements at runtime. 
+   // If you want to run SQL query only once than this interface is preferred over PreparedStatement.
+   // PreparedStatement is used when you want to use SQL statements many times.It accepts input parameters at runtime.         
             var statement = connection.createStatement();
             var resultSet = statement.executeQuery("SELECT id,first_name,last_name,email,gender FROM person");
             while (resultSet.next()) {
