@@ -7,6 +7,12 @@ import java.util.List;
 
 public class SelectDemo {
     public static void main(String[] args) {
+        
+   // execute() : The method used for all types of SQL statements, and that is, returns a boolean value of TRUE or FALSE. If the method return TRUE, return the ResultSet object and FALSE returns the int value.
+
+   // executeUpdate() : This method is used for execution of DML statement(INSERT, UPDATE and DELETE) which is return int value, count of the affected rows.
+
+   // executeQuery() : This method is used to retrieve data from database using SELECT query. This method returns the ResultSet object that returns the data according to the query.
 
         List<Person> persons = new ArrayList<>();
         try (Connection connection = DbHelper.getConnection()) {
